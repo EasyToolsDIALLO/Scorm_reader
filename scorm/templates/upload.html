@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload SCORM File</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body>
+    <h1>Upload SCORM File</h1>
+    <form action="{% url 'scorm_reader' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="row w-100 gap-4 align-items-center justify-content-between ">
+            <div class="w-25">
+                <div class="mb-3 ">
+                    {{ form.file }}
+                </div>
+                <div class="mb-3 "><input type="submit" value="Sauvegarder" /> </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
